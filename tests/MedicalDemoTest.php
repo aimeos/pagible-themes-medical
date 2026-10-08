@@ -50,7 +50,7 @@ class MedicalDemoTest extends ThemeTestAbstract
 
         $this->assertCount( 3, $items );
         $this->assertTrue( $items->every( fn( $item ) => $item->parent_id === $guides->id ) );
-        $this->assertSame( 6, Page::where( 'path', 'treatments' )->firstOrFail()->children()->count() );
+        $this->assertSame( 9, Page::where( 'path', 'treatments' )->firstOrFail()->children()->count() );
         $this->assertSame( 'medical', Page::where( 'tag', 'root' )->firstOrFail()->theme );
     }
 
@@ -80,6 +80,18 @@ class MedicalDemoTest extends ThemeTestAbstract
         $response->assertSee( 'class="call-button" href="tel:+497614567230"', false );
         $response->assertSee( 'Professional cleaning' );
         $response->assertSee( 'Most booked' );
+        $response->assertSee( '<li class="booking">', false );
+        $response->assertSee( 'href="tel:+497614567299"', false );
+    }
+
+
+    public function testPages() : void
+    {
+        foreach( ['/patient-info', '/careers', '/privacy', '/dental-emergencies', '/appointment'] as $path ) {
+            $this->get( $path )->assertOk();
+        }
+
+        $this->get( '/implants' )->assertSee( 'Questions from our patients' );
     }
 
 

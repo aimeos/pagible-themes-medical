@@ -138,6 +138,18 @@
                 </div>
             </article>
         </dialog>
+        @if($business)
+            <div class="topbar">
+                <div class="container">
+                    @if($tel = preg_replace('/[^+0-9]/', '', (string) ($business->telephone ?? '')))
+                        <span>{{ __('Call us') }} <a href="tel:{{ $tel }}">{{ $business->telephone }}</a></span>
+                    @endif
+                    @if($emergency = preg_replace('/[^+0-9]/', '', (string) ($business->{'emergency-phone'} ?? '')))
+                        <span class="emergency">{{ __('Emergencies outside opening hours') }} <a href="tel:{{ $emergency }}">{{ $business->{'emergency-phone'} }}</a></span>
+                    @endif
+                </div>
+            </div>
+        @endif
         <header>
             <nav role="navigation" aria-label="{{ __('Main navigation') }}">
                 <ul>
@@ -202,6 +214,11 @@
                             @endif
                         </li>
                     @endforeach
+                    @if($booking = cmslink($business->booking ?? null))
+                        <li class="booking">
+                            <a href="{{ $booking }}">{{ __('Book an appointment') }}</a>
+                        </li>
+                    @endif
                     @if(Route::has('login'))
                         <li class="login">
                             <a href="{{ route('login') }}" title="{{ __('Login') }}" aria-label="{{ __('Login') }}">

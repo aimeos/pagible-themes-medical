@@ -148,6 +148,16 @@
                     "type": "string",
                     "hint": "Email address for appointment requests"
                 },
+                "emergency-phone": {
+                    "type": "string",
+                    "label": "Emergency number",
+                    "hint": "Phone number for emergencies, shown at the top of every page"
+                },
+                "booking": {
+                    "type": "string",
+                    "label": "Booking link",
+                    "hint": "Link to the appointment page or online booking, shown as a button in the header"
+                },
                 "languages": {
                     "type": "string",
                     "label": "Languages",

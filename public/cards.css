@@ -73,6 +73,10 @@
     width: 100%;
 }
 
+.cards .card-list.layout-cards.cols-4 .card-item picture.image {
+    aspect-ratio: 4 / 5;
+}
+
 .cards .title {
     font-size: calc(var(--pico-font-size) * 1.2);
     margin: 1rem 0 0.75rem;
@@ -98,7 +102,7 @@
 }
 
 .cards .card-list.layout-figures.cols-auto {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
     gap: 2rem;
 }
 
@@ -126,6 +130,7 @@
     display: block;
     aspect-ratio: auto;
     background: none;
+    border: 0;
     border-radius: 0;
     height: auto;
     min-height: 0;
@@ -182,7 +187,7 @@
     color: var(--pico-primary);
     font-variant-numeric: tabular-nums;
     text-transform: none;
-    font-size: clamp(2.75rem, 6vw, 4rem);
+    font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
     line-height: 1;
     margin: 0 0 0.5rem;

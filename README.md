@@ -36,6 +36,8 @@ The **Practice** settings in the page config add a medical business JSON-LD to e
 | Practice type | schema.org type: `Dentist`, `Physician`, `MedicalClinic`, `Physiotherapy` or `MedicalBusiness` |
 | Medical specialty | schema.org `MedicalSpecialty`, rendered as `medicalSpecialty` |
 | Name, address, telephone, email | Practice details, the telephone is also used by the call button |
+| Emergency number | Shown with the telephone in the top bar of every page |
+| Booking link | Appointment page or online booking, shown as a button in the header |
 | Languages | Comma separated languages, rendered as `knowsLanguage` |
 | New patients | Rendered as `isAcceptingNewPatients` |
 | Price range | Price level, e.g. `€€` |

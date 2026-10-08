@@ -125,6 +125,40 @@ nav li :where(a,[role=link]) {
     margin: 0;
 }
 
+.topbar {
+    color: #FFFFFFB3;
+    background-color: var(--medical-dark);
+    font-size: calc(var(--pico-font-size) * 0.75);
+}
+
+.topbar .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.25rem 2rem;
+    padding: 0.5rem min(5%, 2rem);
+}
+
+.topbar a,
+.topbar a:visited,
+.topbar a:hover {
+    color: #FFFFFF;
+    font-weight: 700;
+    text-decoration-color: var(--pico-secondary);
+}
+
+.topbar .emergency::before {
+    content: "";
+    display: inline-block;
+    vertical-align: -0.125em;
+    width: 0.875em;
+    height: 0.875em;
+    margin-inline-end: 0.5em;
+    background-color: var(--pico-secondary);
+    -webkit-mask: var(--medical-plus) center / contain no-repeat;
+    mask: var(--medical-plus) center / contain no-repeat;
+}
+
 body > header {
     background-color: #FFFFFF;
     box-shadow: 0 0.25rem 1.5rem #0F2D3A14;
@@ -165,6 +199,7 @@ header nav details.dropdown > summary:not([role]) {
     font-weight: 600;
     transition: color 0.15s ease;
     text-decoration: none;
+    white-space: nowrap;
     margin: 0;
     height: auto;
     background: transparent;
@@ -176,15 +211,31 @@ header nav details.dropdown ul a {
     color: var(--pico-contrast);
 }
 
+@media (min-width: 992px) and (max-width: 1279px) {
+    header nav ul.menu,
+    header nav ul.menu > li {
+        margin: 0;
+        padding: 0;
+    }
+
+    header nav ul.menu {
+        margin-inline-end: 0.75rem;
+    }
+
+    body > header nav ul.menu > li.booking > a {
+        padding-inline: 1rem;
+    }
+}
+
 header nav a:not([role]):hover,
 header nav a:not([role]):focus,
 header nav a:not([role]):active {
     text-decoration: none;
 }
 
-header nav ul.menu > li:not(:has(+ li.login)):not(.login) > a:hover,
-header nav ul.menu > li:not(:has(+ li.login)):not(.login) > a:focus,
-header nav ul.menu > li:not(:has(+ li.login)):not(.login) > a.active,
+header nav ul.menu > li:not(.booking, .login) > a:hover,
+header nav ul.menu > li:not(.booking, .login) > a:focus,
+header nav ul.menu > li:not(.booking, .login) > a.active,
 header nav details.dropdown > summary:not([role]):hover,
 header nav details.dropdown > summary:not([role]):focus,
 header nav details.dropdown > summary:not([role]):focus-visible,
@@ -196,7 +247,7 @@ header nav details.dropdown[open] > summary:not([role]) {
     border: 0;
 }
 
-header nav ul.menu > li:has(+ li.login) > a {
+header nav ul.menu > li.booking > a {
     color: var(--pico-primary-inverse);
     background-color: var(--pico-primary);
     border-radius: 999px;
@@ -204,9 +255,9 @@ header nav ul.menu > li:has(+ li.login) > a {
     text-wrap: nowrap;
 }
 
-header nav ul.menu > li:has(+ li.login) > a:hover,
-header nav ul.menu > li:has(+ li.login) > a:focus,
-header nav ul.menu > li:has(+ li.login) > a:active {
+header nav ul.menu > li.booking > a:hover,
+header nav ul.menu > li.booking > a:focus,
+header nav ul.menu > li.booking > a:active {
     color: var(--pico-primary-inverse);
     background-color: var(--pico-primary-hover);
 }

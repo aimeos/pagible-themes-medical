@@ -23,14 +23,16 @@ Use a calm, clean layout that makes patients feel welcome and well informed befo
 ## Components
 
 - Hero: a bright photo of a consultation or the practice as background with a short, reassuring headline, a mint tag line, a curved edge at the bottom and a "Book an appointment" action.
-- Treatments: cards with a photo, a short text and a link to the treatment page.
-- Figures and badges: cards in the `figures` layout for years, team size, waiting time and reviews, and in the `badges` layout for new patients, insurances, accessibility and languages.
-- Team: cards with portrait photos of the same ratio, the name as title and the focus as text.
+- Treatments: cards with a photo, a short text and a link to the treatment page; treatment pages name the responsible dentist, link a matching guide and answer cost and insurance questions. Include anxious patients and dental emergencies.
+- Figures and badges: cards in the `figures` layout for years, team size, waiting time and reviews, and in the `badges` layout with line icons for new patients, insurances, accessibility, languages and memberships.
+- Team: cards with portrait photos of the same ratio, the name as title and qualifications and focus as text; the team size matches the figures.
 - Prices: a `pricing` element with typical prices for self-pay services, always with a note on cost plans.
 - First visit: a horizontal timeline from booking to the treatment plan.
 - Patient guides: `blog` pages below the guides page, each with an article, key figures, a vertical step timeline, questions and a call to action.
 - Appointment: a contact form with selects for the reason, new or existing patient, insurance and preferred time, plus a map with opening hours and directions.
-- Practice details: the `practice` config adds the medical business JSON-LD and the call button for phones.
+- Patient info: what to bring, insurance and costs, emergencies and directions, followed by questions.
+- Footer: opening hours with the emergency number, treatments, practice links including careers, imprint and privacy, and contact.
+- Practice details: the `practice` config adds the medical business JSON-LD, the call button for phones, the top bar with telephone and emergency number and the booking button in the header.
 
 ## Accessibility
 

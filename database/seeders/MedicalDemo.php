@@ -62,6 +62,7 @@ class MedicalDemo extends AbstractDemo
         'team-felix' => ['photo-1622253692010-333f2da6031d', 'Felix Brandt', 'Dental hygienist in blue scrubs'],
         'team-jonas' => ['photo-1612349317150-e413f6a5b16d', 'Dr. Jonas Weber', 'Dentist in a white coat smiling'],
         'team-mira' => ['photo-1659353888906-adb3e0041693', 'Dr. Mira Hofmann', 'Dentist in a white coat in front of a red wall'],
+        'team-talk' => ['photo-1758691463203-cce9d415b2b5', 'Our team', 'Two doctors in white coats discussing a treatment plan on a tablet'],
         'tools' => ['photo-1606811856475-5e6fcdc6e509', 'Instruments', 'Sterile dental instruments on a tray'],
         'waiting' => ['photo-1629909614456-6b1c5c94cecc', 'Waiting room', 'Waiting room with teal sofas and plants'],
         'xray' => ['photo-1588776814546-1ffcf47267a5', 'Digital X-ray', 'Dentist looking at an X-ray image on a screen'],
@@ -255,6 +256,7 @@ class MedicalDemo extends AbstractDemo
                 'buttons' => [
                     ['label' => 'Book an appointment', 'url' => '/appointment'],
                 ],
+                'background' => ['id' => $this->img( 'team-talk' ), 'type' => 'file'],
             ]],
             $this->team(),
             ['id' => Utils::uid(), 'type' => 'image-text', 'group' => 'main', 'data' => [
